@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="{% static 'myglobal.css' %}">
+    <title>TESTING</title>
+    <body>
+        {% for x in fruits %}
+            <h1>{{ x }}</h1>
+        {% endfor %}
+    
+        <h1>Hello {{ first_name }}, how are you?</h1>
+
+        {% with name="World" %}
+        <h2>Hello {{name}}!</h2>
+        {% endwith %}
+
+        <ul>
+            {% for x in mymembers %}
+            <li>{{x.first_name}}</li>
+            {% endfor %}
+        </ul>
+
+        {% if x is y %}
+            <h1>YES</h1>
+        {% else %}
+            <h1>NO</h1>
+        {% endif %}
+
+        {% if x == y %}
+            <h1>YES</h1>
+        {% else %}
+            <h1>NO</h1>
+        {% endif %}
+
+        {% with var1=x var2=x %}
+            {% if var1 is var2 %}
+              <h1>YES</h1>
+            {% else %}
+              <h1>NO</h1>
+            {% endif %}
+        {% endwith %}
+
+        {% for x in mymembers reversed %}
+            <h1>{{ x.id }}</h1>
+            <p>
+             {{ x.first_name }}
+             {{ x.last_name }}
+            </p>
+        {% endfor %} 
+
+        <ul>
+            {% for x in fruits %}
+              <li>{{ forloop.counter }}</li>
+            {% endfor %}
+        </ul>
+
+        <!--forloop.first: Allows you to test if the loop is on its first iteration.-->
+        <ul>
+            {% for x in fruits %}
+              <li
+                {% if forloop.first %}
+                  style='background-color:lightblue;'
+                {% endif %}
+              >{{ x }}</li>
+            {% endfor %}
+          </ul>
+        
+          <!--forloop.last: Allows you to test if the loop is on its last iteration.-->
+        <ul>
+          {% for x in fruits %}
+            <li
+              {% if forloop.last %}
+                style='background-color:lightblue;'
+              {% endif %}
+            >{{ x }}</li>
+          {% endfor %}
+        </ul>
+
+        <!--forlopp.revcounter:The current iteration if you start at the end and count backwards, ending up at 1. -->
+        <ul>
+            {% for x in fruits %}
+              <li>{{ forloop.revcounter }}</li>
+            {% endfor %}
+          </ul>
+          
+        <!--Django comments-->
+        <h1>Welcome Everyone</h1>
+        {% comment "this was the original welcome message" %}
+        <h1>Welcome ladies and gentlemen</h1>
+        {% endcomment %}
+
+        {% include "mymenu.html" with me="TOLUWANIMI" sponsor="W3SHOOLS" %}
+
+        <h1>Welcome</h1>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+            </tr>
+            {% for x in mydata %}
+            <tr>
+                <td>{{x.id}}</td>
+                <td>{{x.first_name}}</td>
+                <td>{{x.last_name}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <p>This is {{myname}}</p>
+
+        <p>Order By: {{orderby}}</p>
+
+
+    </body>
+</html>

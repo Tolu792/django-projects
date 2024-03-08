@@ -1,0 +1,18 @@
+{% extends "masters.html" %}
+
+{% block title %}
+    Sidmach Corpers - List of all members
+{% endblock %}
+
+{% block content %}
+    <div class="mycard"> 
+        <h1>Sidmach Corpers Batch C Stream 1</h1>
+        <ul>
+            {% for x in mymembers %}
+            <li onclick="window.location = 'details/{{ x.id }}'">{{ x.first_name }} {{ x.last_name }}</li>
+            {% endfor %}  
+        </ul>
+        
+    </div>
+    
+{% endblock %}
