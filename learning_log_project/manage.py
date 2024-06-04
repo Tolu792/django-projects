@@ -2,10 +2,13 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from dotenv import load_dotenv
 
 
 def main():
     """Run administrative tasks."""
+    load_dotenv()
+
     if os.getenv('DEBUG', 'False') == 'True':
         os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'learning_log.settings.local_settings')
     else:
