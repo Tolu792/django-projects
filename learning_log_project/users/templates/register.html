@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block title %} Register - Learning Log{% endblock %}
+
+{% block header %}
+   <h2>Register your account.</h2>
+{% endblock header %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+
+    {% bootstrap_form registerform %}
+
+    <button name="submit" class="btn btn-primary">Register!</button>
+
+
+</form>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Topics - Learning Log {% endblock %}
+
+{% block header %}
+    <h1>Topics</h1>
+{% endblock header %}
+
+{% block content %}
+    <ul class="list-group">
+        {% for topic in topics %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="{% url 'learning_logs:show_topic' id=topic.id%}">{{ topic }}</a>
+                <small>
+                    <a href="{% url 'learning_logs:delete_topic' id=topic.id %}" class="text-danger" onclick="return confirm('Are you sure you want to delete this item?');">delete topic</a>
+                </small>
+            </li>
+        {% empty %}
+            <li class="list-group-item text-center">No topics have been added yet.</li>
+        {% endfor %}
+    </ul>
+
+    <h3><a href="{% url 'learning_logs:new_topic' %}" class="btn btn-primary">Add a new topic</a></h3>
+{% endblock %}
