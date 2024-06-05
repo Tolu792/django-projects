@@ -32,6 +32,9 @@ var/
 # Virtual environment
 venv/
 
+# logs
+logs/
+
 # Django stuff:
 *.log
 *.pot
