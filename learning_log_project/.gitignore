@@ -1,5 +1,5 @@
 # Virtual environment
-ll_env/
+ll_venv/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -57,6 +57,11 @@ media/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
 
 # Pytest
 .cache
