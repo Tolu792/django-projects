@@ -1,0 +1,62 @@
+# Virtual environment
+drinksvenv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django database
+db.sqlite3
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# logs
+logs/
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+
+# Static and media files
+staticfiles/
+media/
+
+# Translations
+*.mo
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+
+# Pytest
+.cache
+
+# Other
+.env
+.env.*
